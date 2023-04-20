@@ -6,6 +6,8 @@ Simple CLI app built using [Spring Shell](https://spring.io/projects/spring-shel
 * GraalVM 22.3.0^
 * Spring framework 3.0.5^
 
+> suggestion: use `asdf install java graalvm-22.3.1+java17`
+
 ## Build
 ### Compile the app to `jar`
 ```

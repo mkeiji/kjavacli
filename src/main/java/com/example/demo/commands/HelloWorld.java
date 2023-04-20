@@ -12,20 +12,19 @@ import org.springframework.shell.standard.ShellOption;
 @ShellComponent
 public class HelloWorld {
 
-	@ShellMethod(key = "hello-world")
-	public String helloWorld(
-		@ShellOption(defaultValue = "spring") String arg
-	) {
-		return "Hello world " + arg;
-	}
+    @ShellMethod(key = "hello-world")
+    public String helloWorld(
+            @ShellOption(defaultValue = "spring") String arg) {
+        return "Hello world " + arg;
+    }
 
-	@ShellMethod(key = "getos")
-	public String getos() {
+    @ShellMethod(key = "getos")
+    public String getos() {
         return String.format("host os: %s", System.getProperty("os.name"));
-	}
+    }
 
-	@ShellMethod(key = "cmd")
-	public void ls(String cmd) throws Exception {
+    @ShellMethod(key = "cmd")
+    public void ls(String cmd) throws Exception {
         ProcessBuilder builder = new ProcessBuilder();
         builder.command("sh", "-c", cmd);
         builder.directory(new File(System.getProperty("user.home")));
@@ -41,5 +40,5 @@ public class HelloWorld {
         assert exitCode == 0;
 
         future.get(10, TimeUnit.SECONDS);
-	}
+    }
 }
